@@ -1,6 +1,26 @@
 <p>Start editing to see some magic happen :)</p>
-<p>Interpolation:- Class to Template, I love {{ Whoami }}</p>
-<div>
-  <p>Property Binding:-</p>
-  <input type="text" [disabled]="isDisabled" />
-</div>
+<p><strong>Interpolation:-</strong> <em>From Class to Template,</em></p>
+<p>I love {{ Whoami }}</p>
+
+<p><strong>Property Binding:-</strong></p>
+<input type="text" [disabled]="isDisabled" placeholder="Username" />
+<br /><br />
+<input type="text" bind-disabled="isDisabled" placeholder="Password" />
+
+<p><strong>Class Binding:-</strong></p>
+<p [class.text-success]="isSucess">Goodness</p>
+<p [class]="specialclass">Don't scratch me, I'm limitted edition</p>
+<p [ngClass]="messageClasses">ngClass</p>
+
+<p><strong>Event Binding:-</strong><em>Template to class</em></p>
+<button (click)="onClick()">click</button>
+{{ greetUser }}
+
+<p><strong>Template Reference variable:-</strong><em>Template to class</em></p>
+<input #userInput type="text" />
+<button (click)="onClick_TRV(userInput.value)">click</button>
+{{ TRV }}
+
+<p><strong>Two way binding:-</strong></p>
+<input [(ngModel)]="sync" type="text" placeholder="[()]" />
+{{ sync }}
